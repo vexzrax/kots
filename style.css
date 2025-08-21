@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  background: #222;
+  overflow: hidden;
+  user-select: none;
+}
+#game-container {
+  position: relative;
+  width: 960px;
+  margin: 40px auto;
+}
+#game {
+  display: block;
+  background: #222;
+  box-shadow: 0 0 40px #111;
+}
+#overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 960px; height: 540px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 0 2px 8px #000;
+  background: rgba(0,0,0,0.6);
+  z-index: 2;
+  visibility: hidden;
+  flex-direction: column;
+}
+#overlay span {
+  pointer-events: none;
+}
+#overlay button {
+  font-size: 32px;
+  margin-top: 30px;
+  padding: 10px 40px;
+  border-radius: 8px;
+  border: none;
+  color: #222;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #222;
+  pointer-events: auto;
+  transition: box-shadow 0.2s;
+}
+#overlay button.golden {
+  background: linear-gradient(135deg, #ffe766 0%, #f7c948 40%, #fffbe0 60%, #e7b62c 100%);
+  color: #222;
+  border: 3px solid #f9b800;
+  box-shadow: 0 0 12px 3px #ffe766, 0 2px 8px #222;
+  text-shadow: 0 1px 2px #fffbe0;
+  font-family: 'Arial Black', Arial, sans-serif;
+  background-size: 200% 200%;
+  animation: goldenGlow 2s linear infinite;
+}
+@keyframes goldenGlow {
+  0% { box-shadow: 0 0 12px 3px #ffe766, 0 2px 8px #222; }
+  50% { box-shadow: 0 0 24px 8px #fffbe0, 0 2px 8px #222; }
+  100% { box-shadow: 0 0 12px 3px #ffe766, 0 2px 8px #222; }
+}
